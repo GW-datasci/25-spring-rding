@@ -1,0 +1,3 @@
+## Instruction for poster
+
+- research poster to be printed physically (free of charge) from the [GWU library CREATE Digital Studio](https://go.gwu.edu/create). The poster should be 4"x3" (lanscape), with at least 200dpi (preferrably 300dpi or higher). You can use powerpoint slides or other Adobe suite software to create the file, and send to the [CREATE Studio Large-Format Printing](https://library.gwu.edu/3-d-and-large-format-printing) service. It typically takes 24-48 hours to be printed. 
