@@ -1,0 +1,7 @@
+import sys
+import os
+
+# Add the 'Code/component' folder to sys.path
+sys.path.append(os.path.abspath("Code/Components"))
+
+from Code.Components.data_loader import load_data

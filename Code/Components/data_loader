@@ -1,39 +1,20 @@
 import pandas as pd
 import os
 
-# Define the relative path to the data folder
-DATA_FOLDER = os.path.join(os.path.dirname(__file__), "../../Data")
+# Define the relative path to the Data folder
+DATA_FOLDER = "Data"
 
-def load_data(file_name):
-    """Loads a CSV file into a Pandas DataFrame.
+# Define all file names
+file_paths = {
+    "zhvi": "zhvi_home_values.csv",
+    "zhvf": "zhvf_forecast_growth.csv",
+    "median_price": "median_sale_price.csv",
+    "inventory": "inventory_active_listings.csv",
+    "income_needed": "income_needed_downpayment.csv"
+}
 
-    Args:
-        file_name (str): Name of the CSV file.
+# Load all datasets into a dictionary
+dfs = {name: pd.read_csv(os.path.join(DATA_FOLDER, file)) for name, file in file_paths.items()}
 
-    Returns:
-        pd.DataFrame: The loaded DataFrame.
-    """
-    file_path = os.path.join(DATA_FOLDER, file_name)
-    
-    if os.path.exists(file_path):
-        print(f"✅ Loaded {file_name}")
-        return pd.read_csv(file_path)
-    else:
-        raise FileNotFoundError(f"❌ File not found: {file_path}")
-
-# Test loading files
-if __name__ == "__main__":
-    test_files = [
-        "zhvi_home_values.csv",
-        "zhvf_forecast_growth.csv",
-        "median_sale_price.csv",
-        "inventory_active_listings.csv",
-        "income_needed_downpayment.csv"
-    ]
-    
-    for file in test_files:
-        try:
-            df = load_data(file)
-            print(df.head())  # Show first 5 rows to verify loading
-        except FileNotFoundError as e:
-            print(e)
+# Print confirmation
+print("✅ All datasets loaded successfully!")
