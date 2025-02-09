@@ -7,9 +7,9 @@ import re
 import mistune
 # ....................................................................................................
 input_file_path = 'input.json'
-Year = "2024"
+Year = "2025"
 Semester = "Spring"
-Version = "998"
+Version = "137"
 
 class MyRenderer(mistune.Renderer):
     def list_item(self, text):
