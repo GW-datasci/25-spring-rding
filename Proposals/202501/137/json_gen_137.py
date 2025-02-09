@@ -30,22 +30,22 @@ data_to_save = {
         The datasets for this project are sourced from Zillow Research's publicly available data platform, 
         which provides reliable and regularly updated metrics on housing markets across the U.S.
 
-        1. **Zillow Home Value Index (ZHVI)**: All Homes, Smoothed, Seasonally Adjusted (Monthly)
+        1. Zillow Home Value Index (ZHVI): All Homes, Smoothed, Seasonally Adjusted (Monthly)
             - A measure of typical home values across all housing types.
 
-        2. **Zillow Home Value Forecast (ZHVF)**: All Homes, Smoothed, Seasonally Adjusted, Mid-Tier (Monthly)
+        2. Zillow Home Value Forecast (ZHVF): All Homes, Smoothed, Seasonally Adjusted, Mid-Tier (Monthly)
             - Predictive insights into future home values.
 
-        3. **For-Sale Listings: Median Sale Price** 
+        3. For-Sale Listings: Median Sale Price
             - The median sale price of homes sold within the Washington, D.C. Metro area.
 
-        4. **For-Sale Inventory: All Homes**
+        4. For-Sale Inventory: All Homes
             - The number of unique for-sale listings active during each month.
 
-        5. **Affordability Metrics**: New Homeowner Income Needed (20% down)
+        5. Affordability Metrics: New Homeowner Income Needed (20% down)
             - Estimates the annual income required to afford the total monthly payment on a typical home purchase.
 
-        Data is in **time-series format** and will be preprocessed before modeling.
+        Data is in time-series format and will be preprocessed before modeling.
     """,
 
     "Rationale": """
@@ -57,49 +57,49 @@ data_to_save = {
     "Approach": """
         This capstone will follow a structured Data Science approach:
 
-        1. **Data Collection and Cleaning**  
+        1. Data Collection and Cleaning
             - Download Zillow datasets and preprocess them (handling missing data, transformations).
 
-        2. **Exploratory Data Analysis (EDA)**  
+        2. Exploratory Data Analysis (EDA)  
             - Visualize historical price trends, neighborhood disparities, and affordability.
 
-        3. **Feature Engineering**  
+        3. Feature Engineering 
             - Create new variables such as price per square foot and housing market indicators.
 
-        4. **Model Development**  
+        4. Model Development
             - Build regression and time-series forecasting models (ARIMA, Prophet, or ML-based).
 
-        5. **Visualization and Reporting**  
-            - Create dashboards using **Tableau/Power BI**, Matplotlib, and Seaborn.
+        5. Visualization and Reporting
+            - Create dashboards using Tableau/Power BI, Matplotlib, and Seaborn.
 
-        6. **Presentation and Final Report**  
+        6. Presentation and Final Report  
             - Summarize findings in a well-documented report with key insights and policy recommendations.
     """,
 
     "Timeline": """
-        - **Weeks 1-2**: Data Collection and Cleaning  
-        - **Weeks 3-4**: Exploratory Data Analysis and Feature Engineering  
-        - **Weeks 5-6**: Model Development and Evaluation  
-        - **Week 7**: Visualization and Dashboard Creation  
-        - **Week 8**: Final Report, Poster, and Presentation Preparation  
+        - Weeks 1-2: Data Collection and Cleaning  
+        - Weeks 3-4: Exploratory Data Analysis and Feature Engineering  
+        - Weeks 5-6: Model Development and Evaluation  
+        - Week 7: Visualization and Dashboard Creation  
+        - Week 8: Final Report, Poster, and Presentation Preparation  
     """,
 
     "Expected Number Students": """
-        This project is designed for **1-2 students** but can be expanded if necessary.
+        This project is designed for just me.
     """,
 
     "Possible Issues": """
-        - **Data Completeness**: Zillow data may have missing values or inconsistencies.  
-          *Solution*: Apply imputation techniques or drop non-essential missing data.  
+        - Data Completeness: Zillow data may have missing values or inconsistencies.  
+          Solution: Apply imputation techniques or drop non-essential missing data.  
 
-        - **Model Overfitting**: Complex models may not generalize well to unseen data.  
-          *Solution*: Use cross-validation and regularization techniques.  
+        - Model Overfitting: Complex models may not generalize well to unseen data.  
+          Solution: Use cross-validation and regularization techniques.  
 
-        - **Geospatial Complexity**: Mapping trends by neighborhood may be affected by boundary inconsistencies.  
-          *Solution*: Validate geographic data using external sources.  
+        - Geospatial Complexity: Mapping trends by neighborhood may be affected by boundary inconsistencies.  
+          Solution: Validate geographic data using external sources.  
 
-        - **Interpretability**: Ensuring that insights are actionable for non-technical stakeholders.  
-          *Solution*: Emphasize clear visualizations and concise reporting.  
+        - Interpretability: Ensuring that insights are actionable for non-technical stakeholders.  
+          Solution: Emphasize clear visualizations and concise reporting.  
     """,
 
     "Proposed by": "Raymond Ding",
