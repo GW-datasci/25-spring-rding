@@ -2,17 +2,17 @@ DC Housing Market Analysis - Environment Setup Guide
 This repository contains a data science project analyzing the Washington D.C. housing market using various economic indicators. The analysis includes time series modeling, feature engineering, correlation analysis, and predictive modeling to understand housing price dynamics.
 Environment Setup Instructions
 This project requires Python 3.11 (not 3.13) due to TensorFlow compatibility constraints. Follow these steps to set up your environment correctly.
-1. Install Python 3.11
-First, ensure you have Python 3.11 installed on your system. You can download it from the official Python website or use a package manager.
+1. Install Python 3
+First, ensure you have Python 3 installed on your system. You can download it from the official Python website or use a package manager.
 Windows:
 powershellCopy# Using winget (Windows Package Manager)
-winget install Python.Python.3.11
+winget install Python.Python.3
 Mac:
 bashCopy# Using Homebrew
-brew install python@3.11
+brew install python@3
 Linux:
 bashCopy# Using apt (Ubuntu/Debian)
-sudo apt-get install python3.11
+sudo apt-get install python3
 2. Create and Activate a Virtual Environment
 Creating a virtual environment helps isolate project dependencies and avoid conflicts with other projects or system packages.
 Windows:
@@ -20,19 +20,21 @@ powershellCopy# Navigate to your project directory
 cd path\to\dc-housing-project
 
 # Create a virtual environment
-python3.11 -m venv dc_housing_env
+python3 -m venv venv
+python -m venv venv
 
 # Activate the environment
+source venv/bin/activate
 .\dc_housing_env\Scripts\activate
 Mac/Linux:
 bashCopy# Navigate to your project directory
 cd path/to/dc-housing-project
 
 # Create a virtual environment
-python3.11 -m venv dc_housing_env
+python3 -m venv venv
 
 # Activate the environment
-source dc_housing_env/bin/activate
+source venv/bin/activate
 You'll know the environment is activated when you see (dc_housing_env) at the beginning of your command prompt.
 3. Install Required Packages
 Once your virtual environment is activated, install all required packages using the requirements.txt file:
@@ -53,7 +55,7 @@ bashCopy# Install ipykernel
 pip install ipykernel
 
 # Register the kernel
-python -m ipykernel install --user --name=dc_housing_env --display-name="Python 3.11 (DC Housing)"
+python -m ipykernel install --user --name=venv --display-name="Python 3(DC Housing)"
 5. Running Jupyter Notebooks
 Start Jupyter Notebook or Jupyter Lab:
 bashCopy# Start Jupyter Notebook
@@ -61,10 +63,9 @@ jupyter notebook
 
 # Or start Jupyter Lab if you prefer
 jupyter lab
-When you open a notebook, make sure to select the "Python 3.11 (DC Housing)" kernel from the kernel menu.
+When you open a notebook, make sure to select the "Python 3(DC Housing)" kernel from the kernel menu.
 Important Notes
 
-TensorFlow Compatibility: TensorFlow requires Python 3.11 or earlier, not Python 3.13. If you encounter TensorFlow import errors, verify you're using Python 3.11 in your environment.
 Matplotlib Style: If you encounter style errors with matplotlib, use the updated style syntax:
 pythonCopyplt.style.use('seaborn-v0_8-whitegrid')  # For newer matplotlib versions
 
@@ -101,13 +102,3 @@ source dc_housing_env/bin/activate  # Mac/Linux
 
 # Verify pip installation is from the virtual environment
 pip -V
-
-# Reinstall requirements if needed
-pip install -r requirements.txt
-TensorFlow Import Issues
-If TensorFlow still won't import despite being installed in your environment, try:
-pythonCopyimport sys
-print(sys.executable)  # This should point to Python in your virtual environment
-Make sure your Jupyter notebook is using the correct kernel by checking the top-right corner of your notebook interface.
-Plotting Dimension Mismatch
-When plotting time series differences or other transformed data, be aware of dimension mismatches. Always ensure both the x and y values have the same length by properly handling NaN values that result from operations like differencing.

@@ -1,0 +1,181 @@
+{
+  "dataset_summary": {
+    "period": "January 2000 to December 2024",
+    "duration_years": 24.9,
+    "variables": 13,
+    "observations": 300
+  },
+  "housing_market_periods": [
+    {
+      "name": "Housing Boom",
+      "timeframe": "Jan 2000 to Apr 2006",
+      "duration_years": 6.2,
+      "total_price_change_pct": 141.2,
+      "annual_price_change_pct": 15.1,
+      "avg_mortgage_rate": 6.5,
+      "avg_unemployment_rate": 6.88
+    },
+    {
+      "name": "Housing Bust",
+      "timeframe": "May 2006 to May 2009",
+      "duration_years": 3.0,
+      "total_price_change_pct": -25.8,
+      "annual_price_change_pct": -9.5,
+      "avg_mortgage_rate": 6.08,
+      "avg_unemployment_rate": 6.79
+    },
+    {
+      "name": "Post-Crisis Stabilization",
+      "timeframe": "Jun 2009 to Jan 2012",
+      "duration_years": 2.6,
+      "total_price_change_pct": -3.1,
+      "annual_price_change_pct": -1.2,
+      "avg_mortgage_rate": 4.67,
+      "avg_unemployment_rate": 10.14
+    },
+    {
+      "name": "Recovery & Growth",
+      "timeframe": "Feb 2012 to Dec 2019",
+      "duration_years": 7.8,
+      "total_price_change_pct": 37.5,
+      "annual_price_change_pct": 4.1,
+      "avg_mortgage_rate": 3.97,
+      "avg_unemployment_rate": 6.92
+    },
+    {
+      "name": "Pandemic Boom",
+      "timeframe": "Jan 2020 to Dec 2021",
+      "duration_years": 1.9,
+      "total_price_change_pct": 17.4,
+      "annual_price_change_pct": 8.7,
+      "avg_mortgage_rate": 3.03,
+      "avg_unemployment_rate": 7.38
+    },
+    {
+      "name": "Rate Hike Era",
+      "timeframe": "Jan 2022 to Jan 2024",
+      "duration_years": 2.0,
+      "total_price_change_pct": 7.1,
+      "annual_price_change_pct": 3.5,
+      "avg_mortgage_rate": 6.08,
+      "avg_unemployment_rate": 4.82
+    }
+  ],
+  "correlation_insights": {
+    "strongest_positive_correlations": [
+      {
+        "variable": "CPI",
+        "correlation": 0.87
+      },
+      {
+        "variable": "Median_Household_Income",
+        "correlation": 0.85
+      },
+      {
+        "variable": "Population",
+        "correlation": 0.64
+      }
+    ],
+    "strongest_negative_correlations": [
+      {
+        "variable": "Mortgage_Rate",
+        "correlation": -0.23
+      },
+      {
+        "variable": "Unemployment_Rate",
+        "correlation": -0.43
+      },
+      {
+        "variable": "Divorce_Rate",
+        "correlation": -0.52
+      }
+    ],
+    "lagged_relationships": [
+      {
+        "variable": "Unemployment_Rate",
+        "relationship": "leads",
+        "lag_months": 10,
+        "correlation": -0.47
+      },
+      {
+        "variable": "Interest_Rate",
+        "relationship": "lags",
+        "lag_months": 24,
+        "correlation": -0.38
+      },
+      {
+        "variable": "Mortgage_Rate",
+        "relationship": "lags",
+        "lag_months": 24,
+        "correlation": -0.62
+      },
+      {
+        "variable": "CPI",
+        "relationship": "coincident with",
+        "lag_months": 0,
+        "correlation": 0.87
+      },
+      {
+        "variable": "GDP_Growth",
+        "relationship": "lags",
+        "lag_months": 21,
+        "correlation": 0.14
+      }
+    ]
+  },
+  "time_series_properties": {
+    "stationarity": {
+      "is_housing_prices_stationary": false,
+      "adf_test_result": "non-stationary",
+      "kpss_test_result": "non-stationary",
+      "differencing_required": true
+    },
+    "seasonality": {
+      "peak_month": "Jun",
+      "peak_effect": 1060.15,
+      "trough_month": "Jan",
+      "trough_effect": -801.23,
+      "seasonal_magnitude_pct": 0.5
+    },
+    "autocorrelation": {
+      "significant_acf_lags": "Strong autocorrelation at multiple lags, decaying slowly",
+      "significant_pacf_lags": "Significant at lag 1, indicating potential AR(1) component",
+      "suggested_model_structure": "ARIMA model with differencing (likely ARIMA(1,1,0) or ARIMA(1,1,1))"
+    }
+  },
+  "key_events_impact": [
+    {
+      "event": "2008 Financial Crisis",
+      "timeframe": "2008-2010",
+      "impact": "Sharp housing price decline of approximately 15-20%",
+      "recovery_time": "~4 years (until 2012)"
+    },
+    {
+      "event": "Post-Crisis Recovery",
+      "timeframe": "2012-2019",
+      "impact": "Steady housing price growth of 5-8% annually",
+      "contributing_factors": "Low interest rates, economic growth, increasing demand"
+    },
+    {
+      "event": "COVID-19 Pandemic",
+      "timeframe": "2020-2021",
+      "impact": "Initial pause followed by significant price acceleration of 10-15% annually",
+      "contributing_factors": "Low mortgage rates, remote work, supply constraints"
+    },
+    {
+      "event": "Interest Rate Hikes",
+      "timeframe": "2022-2023",
+      "impact": "Cooling market with slowed price growth of 2-4% annually",
+      "contributing_factors": "Higher mortgage rates, affordability constraints"
+    }
+  ],
+  "modeling_implications": [
+    "Housing prices show strong temporal dependence, requiring time series models like ARIMA or VAR",
+    "Non-stationarity in housing prices necessitates differencing or alternative modeling approaches",
+    "Seasonal patterns suggest including seasonal components in forecasting models",
+    "Lagged variables (especially 3-12 months) show strong predictive potential",
+    "Price-to-income ratios and affordability metrics should be included as predictive features",
+    "Interest rates and mortgage rates have strong negative correlation with future housing prices",
+    "Economic shocks (recessions, rate changes) create structural breaks that models should account for"
+  ]
+}
