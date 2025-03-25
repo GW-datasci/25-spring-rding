@@ -1,0 +1,30 @@
+# Core Data Science Libraries
+numpy
+pandas
+scipy
+scikit-learn
+statsmodels
+xgboost
+
+# Advanced Machine Learning
+lightgbm
+
+# Data Visualization
+matplotlib
+seaborn
+
+# Jupyter Environment
+jupyterlab
+ipykernel
+ipython
+
+# Time Series Analysis
+prophet
+
+# Utilities
+tqdm
+joblib
+
+# Date and Time Handling
+python-dateutil
+pytz
