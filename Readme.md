@@ -1,7 +1,6 @@
 DC Housing Market Analysis - Environment Setup Guide
 This repository contains a data science project analyzing the Washington D.C. housing market using various economic indicators. The analysis includes time series modeling, feature engineering, correlation analysis, and predictive modeling to understand housing price dynamics.
 Environment Setup Instructions
-This project requires Python 3.11 (not 3.13) due to TensorFlow compatibility constraints. Follow these steps to set up your environment correctly.
 1. Install Python 3
 First, ensure you have Python 3 installed on your system. You can download it from the official Python website or use a package manager.
 Windows:
@@ -20,12 +19,11 @@ powershellCopy# Navigate to your project directory
 cd path\to\dc-housing-project
 
 # Create a virtual environment
-python3 -m venv venv
 python -m venv venv
 
 # Activate the environment
-source venv/bin/activate
-.\dc_housing_env\Scripts\activate
+Windows:
+.\venv\Scripts\activate
 Mac/Linux:
 bashCopy# Navigate to your project directory
 cd path/to/dc-housing-project
