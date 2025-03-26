@@ -132,10 +132,10 @@
     },
     "seasonality": {
       "peak_month": "Jun",
-      "peak_effect": 1060.15,
+      "peak_effect": 1.0,
       "trough_month": "Jan",
-      "trough_effect": -801.23,
-      "seasonal_magnitude_pct": 0.5
+      "trough_effect": 1.0,
+      "seasonal_magnitude_pct": 0.0
     },
     "autocorrelation": {
       "significant_acf_lags": "Strong autocorrelation at multiple lags, decaying slowly",
