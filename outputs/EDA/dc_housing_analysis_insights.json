@@ -64,32 +64,19 @@
   "correlation_insights": {
     "strongest_positive_correlations": [
       {
-        "variable": "CPI",
-        "correlation": 0.87
+        "variable": "ZHVI",
+        "correlation": 1.0
       },
       {
-        "variable": "Median_Household_Income",
-        "correlation": 0.85
+        "variable": "zhvi_trend",
+        "correlation": 1.0
       },
       {
-        "variable": "Population",
-        "correlation": 0.64
+        "variable": "ZHVI_ma3",
+        "correlation": 1.0
       }
     ],
-    "strongest_negative_correlations": [
-      {
-        "variable": "Mortgage_Rate",
-        "correlation": -0.23
-      },
-      {
-        "variable": "Unemployment_Rate",
-        "correlation": -0.43
-      },
-      {
-        "variable": "Divorce_Rate",
-        "correlation": -0.52
-      }
-    ],
+    "strongest_negative_correlations": [],
     "lagged_relationships": [
       {
         "variable": "Unemployment_Rate",
