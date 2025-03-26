@@ -26,14 +26,11 @@ Windows:
 .\venv\Scripts\activate
 Mac/Linux:
 bashCopy# Navigate to your project directory
-cd path/to/dc-housing-project
-
-# Create a virtual environment
-python3 -m venv venv
+cd path/to/25-spring-rding
 
 # Activate the environment
 source venv/bin/activate
-You'll know the environment is activated when you see (dc_housing_env) at the beginning of your command prompt.
+You'll know the environment is activated when you see (venv) at the beginning of your command prompt.
 3. Install Required Packages
 Once your virtual environment is activated, install all required packages using the requirements.txt file:
 bashCopy# This must be run first before attempting to run any code
