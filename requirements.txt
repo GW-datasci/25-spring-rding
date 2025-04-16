@@ -26,3 +26,4 @@ joblib   # Parallelization
 # Date and Time Handling
 python-dateutil
 pytz
+prophet  # For time series forecasting
