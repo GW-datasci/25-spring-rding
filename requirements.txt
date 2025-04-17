@@ -1,5 +1,5 @@
 # Core Data Science Libraries
-numpy
+numpy < 2  # Ensure compatibility with older versions
 cython
 pandas
 scipy
@@ -22,8 +22,10 @@ ipython
 # Utilities
 tqdm     # Progress bars
 joblib   # Parallelization
+tabulate # Pretty-printing tables
 
 # Date and Time Handling
 python-dateutil
 pytz
 prophet  # For time series forecasting
+pmdarima # For ARIMA modeling

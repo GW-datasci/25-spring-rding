@@ -5,7 +5,7 @@ Environment Setup Instructions
 First, ensure you have Python 3 installed on your system. You can download it from the official Python website or use a package manager.
 Windows:
 powershellCopy# Using winget (Windows Package Manager)
-winget install Python.Python.3
+winget install Python.Python.310
 Mac:
 bashCopy# Using Homebrew
 brew install python@3
