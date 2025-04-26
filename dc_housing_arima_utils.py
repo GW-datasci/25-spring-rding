@@ -18,6 +18,69 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 # warnings.filterwarnings("ignore")
 
 # ==================================
+# Data Loading Functions
+# ==================================
+def load_data(file_path):
+    """
+    Load time series data from a CSV file, set index, and sort columns by missing values.
+
+    Args:
+        file_path (str): Path to the CSV file.
+
+    Returns:
+        tuple: A tuple containing:
+            - pd.DataFrame: Loaded DataFrame with DatetimeIndex.
+            - list: List of column names sorted by the number of missing values (ascending).
+    """
+    print(f"Loading data from: {file_path}")
+    try:
+        df = pd.read_csv(file_path, index_col=0, parse_dates=True)
+        # Ensure the index is a DatetimeIndex
+        if not isinstance(df.index, pd.DatetimeIndex):
+             print("Warning: Index was not automatically parsed as DatetimeIndex. Attempting conversion.")
+             # Add error handling for conversion if needed
+             df.index = pd.to_datetime(df.index)
+
+        # Attempt to infer and set frequency (assuming quarterly start based on context)
+        inferred_freq = pd.infer_freq(df.index)
+        if inferred_freq:
+             print(f"  Inferred frequency: {inferred_freq}. Setting frequency.")
+             df = df.asfreq(inferred_freq)
+        else:
+             # If frequency can't be inferred, try setting a default quarterly frequency
+             # This might fail if dates are irregular.
+             print("  Warning: Index frequency not automatically inferred. Attempting to set 'QS-JAN'.")
+             try:
+                  # Check if index is monotonic increasing before setting frequency
+                  if not df.index.is_monotonic_increasing:
+                       print("  Warning: Index is not monotonic increasing. Sorting index first.")
+                       df = df.sort_index()
+                  df = df.asfreq('QS') # Use 'QS' for Quarter Start default
+                  print("  Successfully set frequency to 'QS'.")
+             except ValueError as e:
+                  print(f"  Could not set frequency 'QS': {e}. Proceeding without frequency.")
+                  print("  Ensure your data has consistent quarterly intervals for best results.")
+
+
+        # Calculate missing values per column
+        missing_counts = df.isnull().sum()
+
+        # Sort columns by missing count (least to most)
+        print("Sorting columns by missing values (ascending):")
+        sorted_columns = missing_counts.sort_values().index.tolist()
+        print(f"  Sorted columns order: {sorted_columns}")
+
+        return df, sorted_columns
+
+    except FileNotFoundError:
+        print(f"Error: File not found at {file_path}")
+        return None, None
+    except Exception as e:
+        print(f"Error loading or processing data: {e}")
+        return None, None
+
+
+# ==================================
 # Metrics Functions
 # ==================================
 
@@ -351,7 +414,7 @@ def perform_walk_forward_validation(series, order, seasonal_order, n_test_quarte
             # Catch errors during refitting or prediction for a specific step
             print(f"  Error during walk-forward step {i}: {e}")
             # Continue to the next iteration, potentially skipping forecasts for this point
-            continue # *** Corrected indentation here ***
+            continue
 
     print("  Walk-forward loop finished.")
     return predictions, actuals, history, prediction_indices
@@ -455,4 +518,3 @@ def create_metrics_df(all_column_metrics):
 
     # Sort the DataFrame by Column name and then by Step Number
     return metrics_df.sort_index()
-
