@@ -70,34 +70,3 @@ pythonCopyplt.style.use('seaborn-v0_8-whitegrid')  # For newer matplotlib versio
 
 Data Location: Ensure the data file dc_economic_monthly_dataframe.csv is placed in the project root directory or update the file path in the code accordingly.
 Memory Requirements: Some of the machine learning and deep learning models may require significant memory. If you encounter memory issues, try reducing the complexity of models or processing smaller batches of data.
-
-Project Structure
-
-data/: Directory containing the raw and processed datasets
-notebooks/: Jupyter notebooks for exploratory data analysis and modeling
-src/: Source code modules
-requirements.txt: List of required Python packages
-README.md: This file
-
-Data Source
-This project uses a comprehensive dataset of economic indicators for Washington D.C. from 2000-2024, including:
-
-ZHVI (Zillow Home Value Index)
-Unemployment rate
-Consumer Price Index (CPI)
-Interest rates and mortgage rates
-GDP growth
-Median household income
-Population and demographic indicators
-
-Running the Analysis
-After setting up your environment, you can run the analysis by opening the Jupyter notebooks in the notebooks/ directory. Start with the exploratory data analysis (EDA) notebook to understand the dataset and then proceed to the modeling notebooks.
-Troubleshooting
-Missing Module Errors
-If you encounter "module not found" errors, ensure you've activated the virtual environment and installed all requirements:
-bashCopy# Activate environment (if not already activated)
-.\dc_housing_env\Scripts\activate  # Windows
-source dc_housing_env/bin/activate  # Mac/Linux
-
-# Verify pip installation is from the virtual environment
-pip -V
